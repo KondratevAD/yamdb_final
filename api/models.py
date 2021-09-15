@@ -1,15 +1,15 @@
 import datetime
+
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
-
 from django.utils.translation import gettext_lazy as _
 
 
 def max_value_current_year(value):
     return MaxValueValidator(
-        datetime.date.today().year, "Год не может быть больше текущего")(
+        datetime.date.today().year, 'Год не может быть больше текущего')(
         value)
 
 
