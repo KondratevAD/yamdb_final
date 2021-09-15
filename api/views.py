@@ -1,6 +1,5 @@
 from functools import partial
 
-from api_yamdb.settings import DEFAULT_FROM_EMAIL, ROLES_PERMISSIONS
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
 from django.utils.crypto import get_random_string
@@ -9,6 +8,8 @@ from rest_framework.decorators import action, api_view
 from rest_framework.exceptions import ParseError
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
+
+from api_yamdb.settings import DEFAULT_FROM_EMAIL, ROLES_PERMISSIONS
 
 from .filters import TitleFilter
 from .mixin import CreateListDestroyModelMixinViewSet
