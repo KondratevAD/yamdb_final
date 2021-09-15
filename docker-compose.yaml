@@ -12,9 +12,9 @@ services:
     env_file:
       - ./.env
   web:
-    container_name: yamdb_final_web_1
+    container_name: yamdb_final
     build: .
-    image: yamdb_final_web_1:v1.0.0
+    image: kondratevad/yamdb_final:v1.0.0
     restart: always
     volumes:
       - static_value:/code/static/
