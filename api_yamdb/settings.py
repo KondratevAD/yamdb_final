@@ -13,7 +13,7 @@ DEFAULT_FROM_EMAIL = "admin@example.com"
 
 DEBUG = False
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+ALLOWED_HOSTS = ${{ secrets.ALLOWED_HOSTS }}
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -62,12 +62,12 @@ WSGI_APPLICATION = "api_yamdb.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_ENGINE'),
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'ENGINE': ${{ secrets.DB_ENGINE }},
+        'NAME': ${{ secrets.DB_NAME }},
+        'USER': ${{ secrets.POSTGRES_USER }},
+        'PASSWORD': ${{ secrets.POSTGRES_PASSWORD }},
+        'HOST': ${{ secrets.DB_HOST }},
+        'PORT': ${{ secrets.DB_PORT }},
     }
 }
 
