@@ -1,3 +1,11 @@
-![example workflow](https://github.com/KondratevAD/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
+![example workflow](https://github.com/KondratevAD/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 # Проект YamDB_Final
-yamdb_final
+ 
+## Описание 
+Проект YaMDb собирает отзывы пользователей на произведения. Произведения делятся на категории: «Книги», «Фильмы», «Музыка». Список категорий может быть расширен администратором (например, можно добавить категорию «Изобразительное искусство» или «Ювелирка»). 
+ 
+## Техническое описание 
+* Реализован на базе RestAPI. 
+* Технология - Django Rest Framework 
+* Документация по ресурсам на http://127.0.0.1:8000/redoc/ 
+

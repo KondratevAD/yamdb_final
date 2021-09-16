@@ -13,7 +13,7 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Install dependencies
+    - name: Install dependencies and static
       run: |
         # обновление pip
         python -m pip install --upgrade pip
