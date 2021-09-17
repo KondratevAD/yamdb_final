@@ -24,10 +24,18 @@ services:
       - media_value:/code/media/
     depends_on:
       - db
-    links:
-      - db:db
     env_file:
       - ./.env
+  migration:
+    image: kondratevad/yamdb_final:v1.0.0
+    command: python manage.py makemigrations --noinput &&
+             python manage.py migrate --noinput &&
+             python manage.py createsuperuser --noinput --username admin --email admin@admin.ru --password admin
+    volumes:
+      - static_value:/code/static/
+      - media_value:/code/media/
+    depends_on:
+      - web
   nginx:
     image: nginx:1.19.3
     ports:
@@ -37,5 +45,5 @@ services:
       - static_value:/var/html/static/
       - media_value:/var/html/media/
     depends_on:
-      - web
+      - migration
     
