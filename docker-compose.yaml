@@ -8,7 +8,7 @@ services:
     env_file:
       - ./.env
     environment:
-      - POSTGRES_PASSWORD=fake_password
+      POSTGRES_HOST_AUTH_METHOD: trust
   web:
     container_name: yamdb_final
     build: .
