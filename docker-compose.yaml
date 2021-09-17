@@ -8,7 +8,8 @@ services:
     env_file:
       - ./.env
     environment:
-      POSTGRES_PASSWORD: example
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
   web:
     container_name: yamdb_final
     build: .
