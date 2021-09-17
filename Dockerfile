@@ -12,4 +12,6 @@ WORKDIR /code
 
 RUN  python manage.py collectstatic
 
+RUN DJANGO_SUPERUSER_PASSWORD=admin python manage.py createsuperuser --noinput admin
+
 CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
