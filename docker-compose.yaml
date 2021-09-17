@@ -7,9 +7,6 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
   web:
     container_name: yamdb_final
     build: .
