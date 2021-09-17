@@ -15,7 +15,8 @@ services:
     container_name: yamdb_final
     build: .
     command: bash -c "python manage.py makemigrations &&
-                      python manage.py migrate"
+                      python manage.py migrate &&
+                      python manage.py createsuperuser --noinput --username admin --email admin@admin.ru --password admin"
     image: kondratevad/yamdb_final:v1.0.0
     restart: always
     volumes:
