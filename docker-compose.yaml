@@ -6,10 +6,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - PGUSER=postgres
-      - PGHOST=db
-      - PGPASSWORD=postgres
-      - PGPORT=5432
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     env_file:
       - ./.env
   web:
