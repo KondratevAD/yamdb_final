@@ -12,6 +12,6 @@ WORKDIR /code
 
 RUN  python manage.py collectstatic
 
-RUN manage.py createsuperuser --noinput --username ${{ secrets.DJANGO_SUPERUSER_USERNAME }} --email ${{ secrets.DJANGO_SUPERUSER_EMAIL }} --password ${{ secrets.DJANGO_SUPERUSER_PASSWORD }}
+RUN python manage.py createsuperuser --noinput --username ${{ secrets.DJANGO_SUPERUSER_USERNAME }} --email ${{ secrets.DJANGO_SUPERUSER_EMAIL }} --password ${{ secrets.DJANGO_SUPERUSER_PASSWORD }}
 
 CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
