@@ -15,8 +15,6 @@ services:
   web:
     container_name: yamdb_final
     build: .
-    command: bash -c "python manage.py makemigrations &&
-                      python manage.py migrate"
     image: kondratevad/yamdb_final:v1.0.0
     restart: always
     volumes:
@@ -26,6 +24,14 @@ services:
       - db
     env_file:
       - ./.env
+  migration:
+    image: kondratevad/yamdb_final:v1.0.0
+    volumes:
+      - .:/code/yamdb_final
+    command: bash -c "python manage.py makemigrations --noinput &&
+             python manage.py migrate --noinput"
+    depends_on:
+      - web
   nginx:
     image: nginx:1.19.3
     ports:
@@ -35,7 +41,7 @@ services:
       - static_value:/var/html/static/
       - media_value:/var/html/media/
     depends_on:
-      - web
+      - migration
 
 volumes:
   postgres_data:
