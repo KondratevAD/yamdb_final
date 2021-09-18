@@ -8,7 +8,7 @@ services:
     environment:
       - PGUSER=postgres
       - PGHOST=db
-      - PGPASSWORD=p1o1s1t1g1r1e1s
+      - PGPASSWORD=postgres
       - PGPORT=5432
     env_file:
       - ./.env
