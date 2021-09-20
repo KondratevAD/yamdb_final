@@ -13,7 +13,7 @@ DEFAULT_FROM_EMAIL = "admin@example.com"
 
 DEBUG = False
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '[*]')
 
 INSTALLED_APPS = [
     "django.contrib.admin",
